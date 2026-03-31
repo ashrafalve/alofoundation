@@ -103,27 +103,27 @@ export default function Programs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white p-12 rounded-md border border-slate-100 shadow-xl hover:shadow-2xl transition-all group flex flex-col h-full"
+                className="bg-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-md border border-slate-100 shadow-xl hover:shadow-2xl transition-all group flex flex-col h-full"
               >
-                <div className={`w-16 h-16 ${program.color} rounded-md flex items-center justify-center mb-8 group-hover:scale-110 transition-transform`}>
-                  <program.icon size={32} />
+                <div className={`w-12 h-12 ${program.color} rounded-md flex items-center justify-center mb-3 group-hover:scale-110 transition-transform sm:w-14 sm:h-14 sm:mb-4`}>
+                  <program.icon size={20} className="sm:size-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-6 group-hover:text-primary transition-colors">{program.title}</h3>
-                <p className="text-slate-600 leading-relaxed mb-8 font-medium flex-grow">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-primary transition-colors">{program.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-sm mb-4 grow">
                   {program.desc}
                 </p>
-                
-                <div className="space-y-3 mb-10">
+
+                <div className="space-y-2 mb-4 sm:mb-6">
                   {program.features.map((feature, i) => (
-                    <div key={i} className="flex items-center gap-2 text-sm text-slate-700 font-semibold">
-                      <CheckCircle2 size={16} className="text-primary" />
-                      {feature}
+                    <div key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 font-medium">
+                      <CheckCircle2 size={14} className="text-primary mt-0.5 shrink-0" />
+                      <span>{feature}</span>
                     </div>
                   ))}
                 </div>
 
-                <Link to="/contact" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs border-b-2 border-transparent hover:border-primary transition-all w-fit">
-                  Get Involved <ArrowRight size={14} />
+                <Link to="/contact" className="inline-flex items-center gap-1 sm:gap-2 text-primary font-bold text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest border-b-2 border-transparent hover:border-primary transition-all w-fit mt-auto">
+                  Get Involved <ArrowRight size={10} className="sm:size-3.5" />
                 </Link>
               </motion.div>
             ))}

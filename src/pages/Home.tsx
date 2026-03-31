@@ -156,10 +156,10 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-square rounded-md overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Mission" 
-                  className="w-full h-full object-cover"
+                <img
+                  src="/images/gallery-1.jpg"
+                  alt="Mission"
+                  className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -184,7 +184,7 @@ export default function Home() {
             <h3 className="text-4xl md:text-5xl font-bold mb-8 text-white">যেসব আদর্শে আমরা বিশ্বাসী</h3>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
               { title: 'Integrity', desc: 'আমরা আমাদের প্রতিটি কাজে সততা ও নৈতিকতা বজায় রাখি।', icon: ShieldCheck },
               { title: 'Empathy', desc: 'মানুষের কষ্টের প্রতি সহানুভূতিশীল হওয়া আমাদের মূল শক্তি।', icon: Heart },
@@ -197,13 +197,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-10 bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all group"
+                className="p-4 sm:p-6 bg-white/5 border border-white/10 rounded-md hover:bg-white/10 transition-all group"
               >
-                <div className="w-14 h-14 bg-primary/20 rounded-md flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
-                  <value.icon size={28} />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-md flex items-center justify-center text-primary mb-3 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <value.icon size={18} className="sm:size-6" />
                 </div>
-                <h4 className="text-xl font-bold mb-4 text-white">{value.title}</h4>
-                <p className="text-slate-300 text-sm leading-relaxed font-medium">{value.desc}</p>
+                <h4 className="text-sm sm:text-lg font-bold mb-2 sm:mb-4 text-white">{value.title}</h4>
+                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-medium">{value.desc}</p>
               </motion.div>
             ))}
           </div>

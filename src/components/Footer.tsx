@@ -76,6 +76,15 @@ export default function Footer() {
                 <Phone size={18} className="text-primary shrink-0" />
                 <span>+88 01874144222</span>
               </li>
+              <li className="flex gap-3">
+                <Mail size={18} className="text-primary shrink-0" />
+                <a
+                  href="mailto:alofoundationjoshodol@gmail.com"
+                  className="hover:text-primary transition-colors"
+                >
+                  alofoundationjoshodol@gmail.com
+                </a>
+              </li>
 
             </ul>
           </div>

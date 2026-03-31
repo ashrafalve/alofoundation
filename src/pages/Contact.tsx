@@ -72,6 +72,20 @@ export default function Contact() {
                     </div>
                   </div>
 
+                  <div className="flex gap-6 group">
+                    <div className="w-14 h-14 bg-slate-50 border border-slate-100 rounded-md flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+                      <Mail size={24} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Email</p>
+                      <a
+                        href="mailto:alofoundationjoshodol@gmail.com"
+                        className="text-slate-900 font-bold text-lg leading-snug hover:text-primary transition-colors"
+                      >
+                        alofoundationjoshodol@gmail.com
+                      </a>
+                    </div>
+                  </div>
 
                 </div>
               </div>
