@@ -28,7 +28,7 @@ const programs = [
     title: 'Youth Empowerment',
     icon: Users2,
     desc: 'তরুণদের কারিগরি ও দক্ষতা উন্নয়নমূলক প্রশিক্ষণ প্রদান। আমরা চাই তরুণরা স্বাবলম্বী হয়ে দেশের উন্নয়নে অবদান রাখুক।',
-    color: 'bg-emerald-50 text-emerald-600',
+    color: 'bg-primary/10 text-primary',
     features: ['Skill Training', 'Leadership Workshops', 'Job Placement']
   },
   {
@@ -56,7 +56,7 @@ const programs = [
     title: 'Plantation Program',
     icon: Trees,
     desc: 'পরিবেশ রক্ষায় ও জলবায়ু পরিবর্তনের ঝুঁকি কমাতে আমরা নিয়মিত বৃক্ষরোপণ কর্মসূচি পালন করি। সবুজ পৃথিবী গড়তে আমাদের এই ক্ষুদ্র প্রয়াস।',
-    color: 'bg-green-50 text-green-600',
+    color: 'bg-primary/10 text-primary',
     features: ['Tree Distribution', 'Reforestation', 'Environmental Awareness']
   }
 ];
@@ -67,15 +67,15 @@ export default function Programs() {
       {/* Page Header */}
       <section className="relative pt-48 pb-32 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/gallery-4.jpg" 
-            alt="Programs Header" 
+          <img
+            src="/images/gallery-4.jpg"
+            alt="Programs Header"
             className="w-full h-full object-cover opacity-20"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 to-slate-950"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

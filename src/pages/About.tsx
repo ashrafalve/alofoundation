@@ -8,15 +8,15 @@ export default function About() {
       {/* Page Header */}
       <section className="relative pt-48 pb-32 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/gallery-5.jpg" 
-            alt="About Header" 
+          <img
+            src="/images/gallery-5.jpg"
+            alt="About Header"
             className="w-full h-full object-cover opacity-20"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 to-slate-950"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -90,9 +90,9 @@ export default function About() {
               className="relative"
             >
               <div className="aspect-[4/5] rounded-md overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/gallery-6.jpg" 
-                  alt="Our Story" 
+                <img
+                  src="/images/gallery-6.jpg"
+                  alt="Our Story"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -119,26 +119,26 @@ export default function About() {
 
           <div className="grid md:grid-cols-3 gap-10">
             {[
-              { 
-                title: 'স্বচ্ছতা', 
+              {
+                title: 'স্বচ্ছতা',
                 desc: 'আমাদের প্রতিটি কার্যক্রম এবং তহবিলের হিসাব সম্পূর্ণ স্বচ্ছ ও জবাবদিহিতামূলক।',
                 icon: ShieldCheck,
-                color: 'bg-emerald-50 text-emerald-600'
+                color: 'bg-primary/10 text-primary'
               },
-              { 
-                title: 'নিঃস্বার্থ সেবা', 
+              {
+                title: 'নিঃস্বার্থ সেবা',
                 desc: 'কোনো ব্যক্তিগত বা রাজনৈতিক স্বার্থ ছাড়াই আমরা আর্তমানবতার সেবায় নিয়োজিত।',
                 icon: Heart,
                 color: 'bg-rose-50 text-rose-600'
               },
-              { 
-                title: 'সামাজিক ঐক্য', 
+              {
+                title: 'সামাজিক ঐক্য',
                 desc: 'সমাজের সকল স্তরের মানুষকে সাথে নিয়ে আমরা একটি সুন্দর ও স্বনির্ভর সমাজ গঠন করতে চাই।',
                 icon: Globe,
                 color: 'bg-blue-50 text-blue-600'
               }
             ].map((value, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 whileHover={{ y: -5 }}
                 className="bg-white p-12 rounded-md shadow-xl border border-slate-100 group"
@@ -198,7 +198,7 @@ export default function About() {
               { img: '/images/team/member-16.jpg' },
               { img: '/images/team/member-17.jpg' },
             ].map((member, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -207,9 +207,9 @@ export default function About() {
                 className="group"
               >
                 <div className="aspect-[3/4] rounded-md overflow-hidden relative">
-                  <img 
-                    src={member.img} 
-                    alt={`Team Member ${idx + 1}`} 
+                  <img
+                    src={member.img}
+                    alt={`Team Member ${idx + 1}`}
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />

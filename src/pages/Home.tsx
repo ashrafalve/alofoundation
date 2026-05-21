@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
-import { 
-  ArrowRight, Heart, Users, BookOpen, ShieldCheck, 
-  CheckCircle2, Quote, Facebook, HelpCircle, 
+import {
+  ArrowRight, Heart, Users, BookOpen, ShieldCheck,
+  CheckCircle2, Quote, Facebook, HelpCircle,
   Award, Globe, Zap, User
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -42,9 +42,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] md:min-h-[95vh] flex items-center pt-32 pb-24 md:pt-20 md:pb-32 overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/gallery-1.jpg" 
-            alt="Hero Background" 
+          <img
+            src="/images/gallery-1.jpg"
+            alt="Hero Background"
             className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
             referrerPolicy="no-referrer"
           />
@@ -75,9 +75,9 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-        
+
         {/* Scroll Indicator */}
-        <motion.div 
+        <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 hidden md:block"
@@ -95,7 +95,7 @@ export default function Home() {
             {[
               { labelEn: 'Active Volunteers', labelBn: 'সক্রিয় স্বেচ্ছাসেবক', valueEn: '30+', valueBn: '৩০+', icon: Users, color: 'text-blue-600' },
               { labelEn: 'Lives Impacted', labelBn: 'জীবন প্রভাবিত', valueEn: '400+', valueBn: '৪০০+', icon: Heart, color: 'text-rose-600' },
-              { labelEn: 'Projects Done', labelBn: 'প্রকল্প সম্পন্ন', valueEn: '5+', valueBn: '৫+', icon: BookOpen, color: 'text-emerald-600' },
+              { labelEn: 'Projects Done', labelBn: 'প্রকল্প সম্পন্ন', valueEn: '5+', valueBn: '৫+', icon: BookOpen, color: 'text-primary' },
               { labelEn: 'Trust Rating', labelBn: 'বিশ্বাস রেটিং', valueEn: '100%', valueBn: '১০০%', icon: ShieldCheck, color: 'text-amber-600' },
             ].map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center text-center lg:items-start lg:text-left lg:flex-row gap-5 group">
@@ -177,7 +177,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-primary font-bold uppercase tracking-[0.3em] text-sm mb-6">Our Core Values</h2>
@@ -232,9 +232,9 @@ export default function Home() {
             </p>
             <div className="grid sm:grid-cols-2 gap-6 mb-12">
               {[
-                'অরাজনৈতিক ও জনকল্যাণমুলক', 
-                'স্বচ্ছ ও জবাবদিহিতামূলক', 
-                'যশোদল ও কিশোরগঞ্জ কেন্দ্রিক', 
+                'অরাজনৈতিক ও জনকল্যাণমুলক',
+                'স্বচ্ছ ও জবাবদিহিতামূলক',
+                'যশোদল ও কিশোরগঞ্জ কেন্দ্রিক',
                 'শিক্ষার আলো ছড়িয়ে দেওয়া',
                 'জরুরি ত্রাণ সহায়তা',
                 'স্বাস্থ্য সচেতনতা বৃদ্ধি'
@@ -251,22 +251,22 @@ export default function Home() {
               Learn Our Full Story <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
-          
+
           <div className="relative">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               className="relative z-10"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
-                alt="Community Work" 
+              <img
+                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
+                alt="Community Work"
                 className="rounded-md shadow-2xl w-full aspect-[4/3] object-cover border-8 border-white"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
-            
+
             {/* Decorative background circles */}
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10"></div>
             <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-blue-100 rounded-full blur-3xl -z-10"></div>
@@ -311,15 +311,15 @@ export default function Home() {
                 icon: Users
               }
             ].map((item, idx) => (
-              <motion.div 
-                key={idx} 
+              <motion.div
+                key={idx}
                 whileHover={{ y: -10 }}
                 className="pro-card group overflow-hidden flex flex-col h-full"
               >
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img 
-                    src={item.img} 
-                    alt={item.title} 
+                  <img
+                    src={item.img}
+                    alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
@@ -345,7 +345,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-primary font-bold uppercase tracking-[0.3em] text-sm mb-6">Success Stories</h2>
@@ -382,7 +382,7 @@ export default function Home() {
                 tag: "Environment"
               }
             ].map((story, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -433,7 +433,7 @@ export default function Home() {
                 text: "এই সংগঠনের সাথে যুক্ত হতে পেরে আমি গর্বিত। এখানে কাজ করার মাধ্যমে আমি প্রকৃত মানসিক শান্তি পাই।"
               }
             ].map((t, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 whileHover={{ y: -5 }}
                 className="bg-slate-50 p-10 rounded-md border border-slate-100 relative"
@@ -472,20 +472,20 @@ export default function Home() {
               <p className="text-lg text-slate-600 mb-10 leading-relaxed font-medium">
                 আলো ফাউন্ডেশন সম্পর্কে সাধারণ কিছু প্রশ্নের উত্তর এখানে দেওয়া হলো। আরও জানতে আমাদের সাথে সরাসরি যোগাযোগ করতে পারেন।
               </p>
-              <a 
-                href="https://www.facebook.com/groups/1878971189641261" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/groups/1878971189641261"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-md font-bold hover:bg-primary-dark transition-all shadow-xl shadow-primary/20"
               >
                 Join our Community <Facebook size={20} />
               </a>
             </div>
-            
+
             <div className="space-y-4">
               {faqs.map((faq, idx) => (
                 <div key={idx} className="bg-white border border-slate-200 rounded-md overflow-hidden shadow-sm">
-                  <button 
+                  <button
                     onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
@@ -493,14 +493,14 @@ export default function Home() {
                       <HelpCircle size={20} className="text-primary shrink-0" />
                       {faq.q}
                     </span>
-                    <motion.span 
+                    <motion.span
                       animate={{ rotate: activeFaq === idx ? 180 : 0 }}
                       className="text-slate-400"
                     >
                       <ArrowRight size={20} className="rotate-90" />
                     </motion.span>
                   </button>
-                  <motion.div 
+                  <motion.div
                     initial={false}
                     animate={{ height: activeFaq === idx ? 'auto' : 0, opacity: activeFaq === idx ? 1 : 0 }}
                     className="overflow-hidden"
@@ -536,8 +536,8 @@ export default function Home() {
               '/images/gallery-11.jpg',
               '/images/gallery-19.jpg',
             ].map((url, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 whileHover={{ scale: 1.02 }}
                 className="aspect-square rounded-md overflow-hidden shadow-lg border-4 border-white group relative"
               >
@@ -562,9 +562,9 @@ export default function Home() {
                 আলো ফাউন্ডেশনের সকল আপডেট পেতে, আমাদের কার্যক্রম সম্পর্কে জানতে এবং আমাদের মানবিক কমিউনিটির অংশ হতে আমাদের অফিসিয়াল ফেসবুক গ্রুপে যুক্ত হন।
               </p>
             </div>
-            <a 
-              href="https://www.facebook.com/groups/1878971189641261" 
-              target="_blank" 
+            <a
+              href="https://www.facebook.com/groups/1878971189641261"
+              target="_blank"
               rel="noopener noreferrer"
               className="bg-primary hover:bg-primary-dark text-white px-12 py-5 rounded-md font-bold text-xl shadow-2xl shadow-primary/30 transition-all flex items-center gap-3 group"
             >
@@ -581,7 +581,7 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
