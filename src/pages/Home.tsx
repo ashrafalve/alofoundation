@@ -6,10 +6,17 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { images } from './Gallery';
 
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const [isEnglish, setIsEnglish] = useState(true);
+  const [randomImages, setRandomImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    const shuffled = [...images].sort(() => 0.5 - Math.random());
+    setRandomImages(shuffled.slice(0, 4).map(img => img.url));
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -530,12 +537,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              '/images/gallery-3.jpg',
-              '/images/gallery-7.jpg',
-              '/images/gallery-11.jpg',
-              '/images/gallery-19.jpg',
-            ].map((url, i) => (
+            {randomImages.map((url, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.02 }}

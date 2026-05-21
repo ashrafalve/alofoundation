@@ -2,7 +2,11 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Image as ImageIcon } from 'lucide-react';
 
-const images = [
+export const images = [
+  { url: '/images/gallery-25.jpg', title: 'Foundation Activity' },
+  { url: '/images/gallery-26.jpg', title: 'Foundation Activity' },
+  { url: '/images/gallery-27.jpg', title: 'Foundation Activity' },
+  { url: '/images/gallery-28.jpg', title: 'Foundation Activity' },
   { url: '/images/gallery-1.jpg', title: 'Community Support' },
   { url: '/images/gallery-2.jpg', title: 'Relief Distribution' },
   { url: '/images/gallery-3.jpg', title: 'Youth Seminar' },
@@ -35,15 +39,15 @@ export default function Gallery() {
       {/* Page Header */}
       <section className="relative pt-48 pb-32 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/gallery-3.jpg" 
-            alt="Gallery Header" 
+          <img
+            src="/images/gallery-3.jpg"
+            alt="Gallery Header"
             className="w-full h-full object-cover opacity-20"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 to-slate-950"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -86,9 +90,9 @@ export default function Gallery() {
                 transition={{ duration: 0.4 }}
                 className="group relative aspect-square overflow-hidden rounded-md bg-slate-100 shadow-lg hover:shadow-2xl transition-all"
               >
-                <img 
-                  src={img.url} 
-                  alt={img.title} 
+                <img
+                  src={img.url}
+                  alt={img.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
