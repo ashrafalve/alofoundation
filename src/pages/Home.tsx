@@ -302,13 +302,13 @@ export default function Home() {
               {
                 title: 'Education Support',
                 desc: 'অসহায় ও মেধাবী শিক্ষার্থীদের শিক্ষা উপকরণ ও বৃত্তি প্রদান। আমরা বিশ্বাস করি শিক্ষাই জাতির মেরুদণ্ড।',
-                img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop',
+                img: '/images/gallery-28.jpg',
                 icon: BookOpen
               },
               {
                 title: 'Healthcare Support and Blood Donation',
                 desc: 'বিনামূল্যে চিকিৎসা ক্যাম্প এবং জরুরি ঔষধ সহায়তা। প্রান্তিক মানুষের কাছে স্বাস্থ্যসেবা পৌঁছে দেওয়াই আমাদের লক্ষ্য।',
-                img: 'https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=2070&auto=format&fit=crop',
+                img: '/images/gallery-22.jpg',
                 icon: Heart
               },
               {

@@ -8,9 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary rounded-md flex items-center justify-center text-white">
-                <Sun size={22} fill="currentColor" />
+            <Link to="/" className="flex items-center gap-3">
+              <div className="bg-white p-2 rounded-sm">
+                <img
+                  src="/logo/alofoundationlogo.png"
+                  alt="Alo Foundation Logo"
+                  className="h-14 w-auto object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-white leading-none">আলো ফাউণ্ডেশন</span>
@@ -21,9 +25,9 @@ export default function Footer() {
               আলো ফাউন্ডেশন একটি সেচ্ছাসেবী জনকল্যাণমুলক ও অরাজনৈতিক প্রতিষ্ঠান। আমরা সমাজের পিছিয়ে পড়া মানুষের কল্যাণে কাজ করি।
             </p>
             <div className="flex gap-4">
-              <a 
-                href="https://www.facebook.com/groups/1878971189641261" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/groups/1878971189641261"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
                 title="Facebook Group"
@@ -63,9 +67,9 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex gap-3">
                 <MapPin size={18} className="text-primary shrink-0" />
-                <a 
-                  href="https://maps.app.goo.gl/cYKNmkxtCMzTKV537" 
-                  target="_blank" 
+                <a
+                  href="https://maps.app.goo.gl/cYKNmkxtCMzTKV537"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >

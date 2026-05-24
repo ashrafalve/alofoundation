@@ -26,18 +26,17 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-300 border-b',
-        scrolled 
-          ? 'bg-white/80 backdrop-blur-md border-slate-200 py-3 shadow-sm' 
-          : 'bg-transparent border-transparent py-5'
+        'fixed top-0 w-full z-50 transition-all duration-300 border-b bg-white border-slate-200 py-3 shadow-sm'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary rounded-md flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
-              <Sun size={22} fill="currentColor" />
-            </div>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img
+              src="/logo/alofoundationlogo.png"
+              alt="Alo Foundation Logo"
+              className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+            />
             <div className="flex flex-col">
               <span className="text-xl font-bold text-slate-900 leading-none">আলো ফাউণ্ডেশন</span>
               <span className="text-[10px] uppercase tracking-widest text-primary font-semibold">Alo Foundation</span>
@@ -90,8 +89,8 @@ export default function Navbar() {
                 to={link.path}
                 className={cn(
                   'block px-3 py-3 text-base font-medium rounded-md',
-                  location.pathname === link.path 
-                    ? 'bg-primary/10 text-primary' 
+                  location.pathname === link.path
+                    ? 'bg-primary/10 text-primary'
                     : 'text-slate-600 hover:bg-slate-50'
                 )}
                 onClick={() => setIsOpen(false)}
