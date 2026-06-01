@@ -365,6 +365,12 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12">
             {[
               {
+                title: "সবার জন্য কুরবানি ২০২৬",
+                desc: "আলহামদুলিল্লাহ, সফলভাবে সম্পন্ন হলো 'সবার জন্য কুরবানি কর্মসূচি ২০২৬'। বিশেষ কৃতজ্ঞতা: GLOBAL TEXTILE SOURCING LIMITED।",
+                img: "/images/gallery-29.jpg",
+                tag: "Eid-ul-Adha"
+              },
+              {
                 title: "ঈদ উপহার প্রজেক্ট",
                 desc: "অসহায় ও সুবিধাবঞ্চিত পরিবারের মাঝে ঈদ সামগ্রী ও উপহার বিতরণ করে তাদের মুখে হাসি ফোটানো।",
                 img: "/images/gallery-12.jpg",

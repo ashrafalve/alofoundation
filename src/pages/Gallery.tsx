@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { Image as ImageIcon } from 'lucide-react';
 
 export const images = [
+  { url: '/images/gallery-29.jpg', title: 'সবার জন্য কুরবানি ২০২৬' },
+  { url: '/images/gallery-30.jpg', title: 'সবার জন্য কুরবানি ২০২৬' },
+  { url: '/images/gallery-31.jpg', title: 'সবার জন্য কুরবানি ২০২৬' },
+  { url: '/images/gallery-32.jpg', title: 'সবার জন্য কুরবানি ২০২৬' },
   { url: '/images/gallery-25.jpg', title: 'Foundation Activity' },
   { url: '/images/gallery-26.jpg', title: 'Foundation Activity' },
   { url: '/images/gallery-27.jpg', title: 'Foundation Activity' },
