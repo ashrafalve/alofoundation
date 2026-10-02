@@ -68,7 +68,7 @@ export default function Programs() {
       <section className="relative pt-48 pb-32 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/gallery-4.jpg"
+            src="/images/gallery-4.webp"
             alt="Programs Header"
             className="w-full h-full object-cover opacity-20"
             referrerPolicy="no-referrer"

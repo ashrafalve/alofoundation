@@ -9,7 +9,7 @@ export default function About() {
       <section className="relative pt-48 pb-32 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/gallery-5.jpg"
+            src="/images/gallery-5.webp"
             alt="About Header"
             className="w-full h-full object-cover opacity-20"
             referrerPolicy="no-referrer"
@@ -91,7 +91,7 @@ export default function About() {
             >
               <div className="aspect-[4/5] rounded-md overflow-hidden shadow-2xl">
                 <img
-                  src="/images/gallery-6.jpg"
+                  src="/images/gallery-6.webp"
                   alt="Our Story"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

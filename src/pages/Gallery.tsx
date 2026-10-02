@@ -3,38 +3,38 @@ import { Link } from 'react-router-dom';
 import { Image as ImageIcon } from 'lucide-react';
 
 export const images = [
-  { url: '/images/gallery-29.jpg', title: 'সবার জন্য কুরবানি ২০২৬' },
-  { url: '/images/gallery-30.jpg', title: 'সবার জন্য কুরবানি ২০২৬' },
-  { url: '/images/gallery-31.jpg', title: 'সবার জন্য কুরবানি ২০২৬' },
-  { url: '/images/gallery-32.jpg', title: 'সবার জন্য কুরবানি ২০২৬' },
-  { url: '/images/gallery-25.jpg', title: 'Foundation Activity' },
-  { url: '/images/gallery-26.jpg', title: 'Foundation Activity' },
-  { url: '/images/gallery-27.jpg', title: 'Foundation Activity' },
-  { url: '/images/gallery-28.jpg', title: 'Foundation Activity' },
-  { url: '/images/gallery-1.jpg', title: 'Community Support' },
-  { url: '/images/gallery-2.jpg', title: 'Relief Distribution' },
-  { url: '/images/gallery-3.jpg', title: 'Youth Seminar' },
-  { url: '/images/gallery-4.jpg', title: 'Education Support' },
-  { url: '/images/gallery-5.jpg', title: 'Health Camp' },
-  { url: '/images/gallery-6.jpg', title: 'Volunteer Meeting' },
-  { url: '/images/gallery-7.jpg', title: 'Medical Checkup' },
-  { url: '/images/gallery-8.jpg', title: 'Classroom Session' },
-  { url: '/images/gallery-9.jpg', title: 'Food Distribution' },
-  { url: '/images/gallery-10.jpg', title: 'Youth Leadership' },
-  { url: '/images/gallery-11.jpg', title: 'School Supplies' },
-  { url: '/images/gallery-12.jpg', title: 'Community Gathering' },
-  { url: '/images/gallery-13.jpg', title: 'Eye Care Camp' },
-  { url: '/images/gallery-14.jpg', title: 'Emergency Relief' },
-  { url: '/images/gallery-15.jpg', title: 'Skills Training' },
-  { url: '/images/gallery-16.jpg', title: 'Literacy Program' },
-  { url: '/images/gallery-17.jpg', title: 'Local Outreach' },
-  { url: '/images/gallery-18.jpg', title: 'Vaccination Drive' },
-  { url: '/images/gallery-19.jpg', title: 'Winter Clothing' },
-  { url: '/images/gallery-20.jpg', title: 'Career Guidance' },
-  { url: '/images/gallery-21.jpg', title: 'Scholarship Award' },
-  { url: '/images/gallery-22.jpg', title: 'Neighborhood Cleanup' },
-  { url: '/images/gallery-23.jpg', title: 'Blood Donation' },
-  { url: '/images/gallery-24.jpg', title: 'Disaster Response' },
+  { url: '/images/gallery-29.webp', title: 'সবার জন্য কুরবানি ২০২৬' },
+  { url: '/images/gallery-30.webp', title: 'সবার জন্য কুরবানি ২০২৬' },
+  { url: '/images/gallery-31.webp', title: 'সবার জন্য কুরবানি ২০২৬' },
+  { url: '/images/gallery-32.webp', title: 'সবার জন্য কুরবানি ২০২৬' },
+  { url: '/images/gallery-25.webp', title: 'Foundation Activity' },
+  { url: '/images/gallery-26.webp', title: 'Foundation Activity' },
+  { url: '/images/gallery-27.webp', title: 'Foundation Activity' },
+  { url: '/images/gallery-28.webp', title: 'Foundation Activity' },
+  { url: '/images/gallery-1.webp', title: 'Community Support' },
+  { url: '/images/gallery-2.webp', title: 'Relief Distribution' },
+  { url: '/images/gallery-3.webp', title: 'Youth Seminar' },
+  { url: '/images/gallery-4.webp', title: 'Education Support' },
+  { url: '/images/gallery-5.webp', title: 'Health Camp' },
+  { url: '/images/gallery-6.webp', title: 'Volunteer Meeting' },
+  { url: '/images/gallery-7.webp', title: 'Medical Checkup' },
+  { url: '/images/gallery-8.webp', title: 'Classroom Session' },
+  { url: '/images/gallery-9.webp', title: 'Food Distribution' },
+  { url: '/images/gallery-10.webp', title: 'Youth Leadership' },
+  { url: '/images/gallery-11.webp', title: 'School Supplies' },
+  { url: '/images/gallery-12.webp', title: 'Community Gathering' },
+  { url: '/images/gallery-13.webp', title: 'Eye Care Camp' },
+  { url: '/images/gallery-14.webp', title: 'Emergency Relief' },
+  { url: '/images/gallery-15.webp', title: 'Skills Training' },
+  { url: '/images/gallery-16.webp', title: 'Literacy Program' },
+  { url: '/images/gallery-17.webp', title: 'Local Outreach' },
+  { url: '/images/gallery-18.webp', title: 'Vaccination Drive' },
+  { url: '/images/gallery-19.webp', title: 'Winter Clothing' },
+  { url: '/images/gallery-20.webp', title: 'Career Guidance' },
+  { url: '/images/gallery-21.webp', title: 'Scholarship Award' },
+  { url: '/images/gallery-22.webp', title: 'Neighborhood Cleanup' },
+  { url: '/images/gallery-23.webp', title: 'Blood Donation' },
+  { url: '/images/gallery-24.webp', title: 'Disaster Response' },
 ];
 
 export default function Gallery() {
@@ -44,7 +44,7 @@ export default function Gallery() {
       <section className="relative pt-48 pb-32 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/gallery-3.jpg"
+            src="/images/gallery-3.webp"
             alt="Gallery Header"
             className="w-full h-full object-cover opacity-20"
             referrerPolicy="no-referrer"

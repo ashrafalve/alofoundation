@@ -50,7 +50,7 @@ export default function Home() {
       <section className="relative min-h-[90vh] md:min-h-[95vh] flex items-center pt-32 pb-24 md:pt-20 md:pb-32 overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/gallery-1.jpg"
+            src="/images/gallery-1.webp"
             alt="Hero Background"
             className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
             referrerPolicy="no-referrer"
@@ -164,7 +164,7 @@ export default function Home() {
             >
               <div className="aspect-square rounded-md overflow-hidden shadow-2xl">
                 <img
-                  src="/images/gallery-1.jpg"
+                  src="/images/gallery-1.webp"
                   alt="Mission"
                   className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
                   referrerPolicy="no-referrer"
@@ -302,19 +302,19 @@ export default function Home() {
               {
                 title: 'Education Support',
                 desc: 'অসহায় ও মেধাবী শিক্ষার্থীদের শিক্ষা উপকরণ ও বৃত্তি প্রদান। আমরা বিশ্বাস করি শিক্ষাই জাতির মেরুদণ্ড।',
-                img: '/images/gallery-28.jpg',
+                img: '/images/gallery-28.webp',
                 icon: BookOpen
               },
               {
                 title: 'Healthcare Support and Blood Donation',
                 desc: 'বিনামূল্যে চিকিৎসা ক্যাম্প এবং জরুরি ঔষধ সহায়তা। প্রান্তিক মানুষের কাছে স্বাস্থ্যসেবা পৌঁছে দেওয়াই আমাদের লক্ষ্য।',
-                img: '/images/gallery-22.jpg',
+                img: '/images/gallery-22.webp',
                 icon: Heart
               },
               {
                 title: 'Social Welfare',
                 desc: 'বৃক্ষরোপণ কর্মসূচি ও দুর্যোগকালীন ত্রাণ সহায়তা কার্যক্রম। বিপদে মানুষের পাশে দাঁড়ানোই আমাদের ধর্ম।',
-                img: '/images/gallery-17.jpg',
+                img: '/images/gallery-17.webp',
                 icon: Users
               }
             ].map((item, idx) => (
@@ -367,31 +367,31 @@ export default function Home() {
               {
                 title: "সবার জন্য কুরবানি ২০২৬",
                 desc: "আলহামদুলিল্লাহ, সফলভাবে সম্পন্ন হলো 'সবার জন্য কুরবানি কর্মসূচি ২০২৬'। বিশেষ কৃতজ্ঞতা: GLOBAL TEXTILE SOURCING LIMITED।",
-                img: "/images/gallery-29.jpg",
+                img: "/images/gallery-29.webp",
                 tag: "Eid-ul-Adha"
               },
               {
                 title: "ঈদ উপহার প্রজেক্ট",
                 desc: "অসহায় ও সুবিধাবঞ্চিত পরিবারের মাঝে ঈদ সামগ্রী ও উপহার বিতরণ করে তাদের মুখে হাসি ফোটানো।",
-                img: "/images/gallery-12.jpg",
+                img: "/images/gallery-12.webp",
                 tag: "Relief"
               },
               {
                 title: "বিনামূল্যে চিকিৎসা ক্যাম্প",
                 desc: "সাধারণ মানুষের জন্য বিনামূল্যে স্বাস্থ্যসেবা, বিশেষজ্ঞ পরামর্শ এবং জরুরি ঔষধ প্রদান কার্যক্রম।",
-                img: "/images/gallery-24.jpg",
+                img: "/images/gallery-24.webp",
                 tag: "Health"
               },
               {
                 title: "রক্ত দান ক্যাম্প",
                 desc: "মুমূর্ষু রোগীদের জীবন বাঁচাতে নিয়মিত রক্ত দান কর্মসূচি এবং জনসচেতনতা বৃদ্ধি।",
-                img: "/images/gallery-15.jpg",
+                img: "/images/gallery-15.webp",
                 tag: "Health"
               },
               {
                 title: "বৃক্ষরোপণ কর্মসূচি",
                 desc: "পরিবেশ রক্ষায় ও জলবায়ু পরিবর্তনের ঝুঁকি কমাতে আমরা নিয়মিত বৃক্ষরোপণ কর্মসূচি পালন করি।",
-                img: "/images/gallery-18.jpg",
+                img: "/images/gallery-18.webp",
                 tag: "Environment"
               }
             ].map((story, idx) => (
