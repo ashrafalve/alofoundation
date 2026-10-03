@@ -1,172 +1,161 @@
-import { motion } from 'motion/react';
-import { Book, HeartPulse, Soup, Users2, GraduationCap, HandHelping, ArrowRight, CheckCircle2, Trophy, Trees } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import {
+  BookOpen,
+  Check,
+  GraduationCap,
+  HandHelping,
+  HeartPulse,
+  Soup,
+  Trophy,
+  Trees,
+  Users2,
+} from 'lucide-react';
+import {
+  Button,
+  Card,
+  Container,
+  CtaSection,
+  PageHeader,
+  Section,
+  SectionHeading,
+  StatRow,
+} from '@/src/components/ui';
 
 const programs = [
   {
     title: 'Education for All',
+    titleBn: 'শিক্ষা সহায়তা',
+    desc: 'অসহায় ও মেধাবী শিক্ষার্থীদের স্কুল ফি, বই এবং শিক্ষা উপকরণ প্রদান। আমরা বিশ্বাস করি শিক্ষাই জাতির মেরুদণ্ড এবং প্রতিটি শিশুর শিক্ষার অধিকার রয়েছে।',
     icon: GraduationCap,
-    desc: 'অসহায় ও মেধাবী শিক্ষার্থীদের স্কুল ফি, বই এবং শিক্ষা উপকরণ প্রদান। আমরা বিশ্বাস করি শিক্ষাই জাতির মেরুদণ্ড এবং প্রতিটি শিশুর শিক্ষার অধিকার রয়েছে।',
-    color: 'bg-blue-50 text-blue-600',
-    features: ['Scholarships', 'School Supplies', 'Literacy Programs']
+    features: ['Scholarships', 'School supplies', 'Literacy programs'],
   },
   {
-    title: 'Healthcare Support and Blood Donation',
+    title: 'Healthcare & Blood Donation',
+    titleBn: 'স্বাস্থ্যসেবা ও রক্তদান',
+    desc: 'বিনামূল্যে স্বাস্থ্য পরীক্ষা, চক্ষু শিবির এবং জরুরি ঔষধ বিতরণ কার্যক্রম। প্রান্তিক মানুষের কাছে আধুনিক স্বাস্থ্যসেবা পৌঁছে দেওয়াই আমাদের লক্ষ্য।',
     icon: HeartPulse,
-    desc: 'বিনামূল্যে স্বাস্থ্য পরীক্ষা, চক্ষু শিবির এবং জরুরি ঔষধ বিতরণ কার্যক্রম। প্রান্তিক মানুষের কাছে আধুনিক স্বাস্থ্যসেবা পৌঁছে দেওয়াই আমাদের লক্ষ্য।',
-    color: 'bg-rose-50 text-rose-600',
-    features: ['Free Medical Camps', 'Medicine Support', 'Health Awareness']
+    features: ['Free medical camps', 'Medicine support', 'Health awareness'],
   },
   {
     title: 'Food Security',
+    titleBn: 'খাদ্য নিরাপত্তা',
+    desc: 'দুস্থ ও অসহায় পরিবারের মাঝে নিয়মিত খাদ্য সামগ্রী বিতরণ এবং পুষ্টি সচেতনতা বৃদ্ধি। ক্ষুধার্ত মানুষের মুখে হাসি ফোটানোই আমাদের সার্থকতা।',
     icon: Soup,
-    desc: 'দুস্থ ও অসহায় পরিবারের মাঝে নিয়মিত খাদ্য সামগ্রী বিতরণ এবং পুষ্টি সচেতনতা বৃদ্ধি। ক্ষুধার্ত মানুষের মুখে হাসি ফোটানোই আমাদের সার্থকতা।',
-    color: 'bg-orange-50 text-orange-600',
-    features: ['Food Packages', 'Nutrition Education', 'Emergency Relief']
+    features: ['Food packages', 'Nutrition education', 'Emergency relief'],
   },
   {
     title: 'Youth Empowerment',
+    titleBn: 'যুব উন্নয়ন',
+    desc: 'তরুণদের কারিগরি ও দক্ষতা উন্নয়নমূলক প্রশিক্ষণ প্রদান। আমরা চাই তরুণরা স্বাবলম্বী হয়ে দেশের উন্নয়নে অবদান রাখুক।',
     icon: Users2,
-    desc: 'তরুণদের কারিগরি ও দক্ষতা উন্নয়নমূলক প্রশিক্ষণ প্রদান। আমরা চাই তরুণরা স্বাবলম্বী হয়ে দেশের উন্নয়নে অবদান রাখুক।',
-    color: 'bg-primary/10 text-primary',
-    features: ['Skill Training', 'Leadership Workshops', 'Job Placement']
+    features: ['Skill training', 'Leadership workshops', 'Job placement'],
   },
   {
     title: 'Disaster Relief',
+    titleBn: 'দুর্যোগে সহায়তা',
+    desc: 'বন্যা, ঘূর্ণিঝড় বা যেকোনো প্রাকৃতিক দুর্যোগে ক্ষতিগ্রস্তদের পাশে দাঁড়ানো। জরুরি ত্রাণ ও পুনর্বাসন কার্যক্রম আমাদের অগ্রাধিকার।',
     icon: HandHelping,
-    desc: 'বন্যা, ঘূর্ণিঝড় বা যেকোনো প্রাকৃতিক দুর্যোগে ক্ষতিগ্রস্তদের পাশে দাঁড়ানো। জরুরি ত্রাণ ও পুনর্বাসন কার্যক্রম আমাদের অগ্রাধিকার।',
-    color: 'bg-purple-50 text-purple-600',
-    features: ['Emergency Rescue', 'Relief Distribution', 'Rehabilitation']
+    features: ['Emergency rescue', 'Relief distribution', 'Rehabilitation'],
   },
   {
     title: 'Social Awareness',
-    icon: Book,
-    desc: 'বাল্যবিবাহ রোধ, মাদক বিরোধী প্রচারণা এবং সামাজিক সচেতনতা বৃদ্ধিতে নিয়মিত ক্যাম্পেইন ও সেমিনার আয়োজন।',
-    color: 'bg-amber-50 text-amber-600',
-    features: ['Anti-Drug Campaign', 'Child Marriage Prevention', 'Rights Awareness']
+    titleBn: 'সামাজিক সচেতনতা',
+    desc: 'বাল্যবিবাহ রোধ, মাদক বিরোধী প্রচারণা এবং সামাজিক সচেতনতা বৃদ্ধিতে নিয়মিত ক্যাম্পেইন ও সেমিনার আয়োজন।',
+    icon: BookOpen,
+    features: ['Anti-drug campaign', 'Child marriage prevention', 'Rights awareness'],
   },
   {
     title: 'Sports Events',
+    titleBn: 'ক্রীড়া প্রতিযোগিতা',
+    desc: 'তরুণদের শারীরিক ও মানসিক বিকাশে নিয়মিত ক্রীড়া প্রতিযোগিতার আয়োজন। খেলাধুলার মাধ্যমে আমরা যুবসমাজকে মাদক ও অপসংস্কৃতি থেকে দূরে রাখতে চাই।',
     icon: Trophy,
-    desc: 'তরুণদের শারীরিক ও মানসিক বিকাশে নিয়মিত ক্রীড়া প্রতিযোগিতার আয়োজন। খেলাধুলার মাধ্যমে আমরা যুবসমাজকে মাদক ও অপসংস্কৃতি থেকে দূরে রাখতে চাই।',
-    color: 'bg-cyan-50 text-cyan-600',
-    features: ['Annual Sports Day', 'Cricket Tournaments', 'Football Matches']
+    features: ['Annual sports day', 'Cricket tournaments', 'Football matches'],
   },
   {
     title: 'Plantation Program',
+    titleBn: 'বৃক্ষরোপণ কর্মসূচি',
+    desc: 'পরিবেশ রক্ষায় ও জলবায়ু পরিবর্তনের ঝুঁকি কমাতে আমরা নিয়মিত বৃক্ষরোপণ কর্মসূচি পালন করি। সবুজ পৃথিবী গড়তে আমাদের এই ক্ষুদ্র প্রয়াস।',
     icon: Trees,
-    desc: 'পরিবেশ রক্ষায় ও জলবায়ু পরিবর্তনের ঝুঁকি কমাতে আমরা নিয়মিত বৃক্ষরোপণ কর্মসূচি পালন করি। সবুজ পৃথিবী গড়তে আমাদের এই ক্ষুদ্র প্রয়াস।',
-    color: 'bg-primary/10 text-primary',
-    features: ['Tree Distribution', 'Reforestation', 'Environmental Awareness']
-  }
+    features: ['Tree distribution', 'Reforestation', 'Environmental awareness'],
+  },
+];
+
+const outcomes = [
+  { value: '50+', label: 'Students helped', labelBn: 'শিক্ষার্থী উপকৃত' },
+  { value: '2+', label: 'Medical camps', labelBn: 'চিকিৎসা ক্যাম্প' },
+  { value: '1,000+', label: 'Food packages', labelBn: 'খাদ্য প্যাকেজ' },
+  { value: '5+', label: 'Villages covered', labelBn: 'গ্রাম অন্তর্ভুক্ত' },
 ];
 
 export default function Programs() {
   return (
-    <div className="flex flex-col w-full overflow-x-hidden">
-      {/* Page Header */}
-      <section className="relative pt-48 pb-32 bg-slate-900 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/gallery-4.webp"
-            alt="Programs Header"
-            className="w-full h-full object-cover opacity-20"
-            referrerPolicy="no-referrer"
+    <>
+      <PageHeader
+        eyebrow="Our programs"
+        title={
+          <>
+            আমাদের <span className="text-primary-light">কার্যক্রম</span>
+          </>
+        }
+        lede="আলো ফাউন্ডেশন বহুমুখী সামাজিক উন্নয়নমূলক কাজ করে থাকে। আমাদের প্রতিটি কার্যক্রম পরিচালিত হয় স্বচ্ছতা ও নিষ্ঠার সাথে।"
+        image="/images/gallery-4.webp"
+      />
+
+      <Section tone="white">
+        <Container>
+          <SectionHeading
+            eyebrow="What we do"
+            title={<span className="bn">আমরা যেসব ক্ষেত্রে কাজ করি</span>}
+            lede="আটটি মূল কর্মক্ষেত্র — প্রতিটি স্বচ্ছ হিসাব ও জবাবদিহিতার সাথে পরিচালিত।"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 to-slate-950"></div>
-        </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
-              আমাদের <span className="text-primary">কার্যক্রম</span>
-            </h1>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed">
-              আলো ফাউন্ডেশন বহুমুখী সামাজিক উন্নয়নমূলক কাজ করে থাকে। আমাদের প্রতিটি কার্যক্রম পরিচালিত হয় স্বচ্ছতা ও নিষ্ঠার সাথে।
-            </p>
-          </motion.div>
-        </div>
-      </section>
+          <ul className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+{programs.map((program, index) => (
+              <li key={program.title}>
+                <Card interactive delay={(index % 3) * 0.08} className="flex flex-col p-8">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-primary-tint text-primary">
+                    <program.icon size={22} />
+                  </span>
 
-      {/* Programs Grid */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-            {programs.map((program, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-md border border-slate-100 shadow-xl hover:shadow-2xl transition-all group flex flex-col h-full"
-              >
-                <div className={`w-12 h-12 ${program.color} rounded-md flex items-center justify-center mb-3 group-hover:scale-110 transition-transform sm:w-14 sm:h-14 sm:mb-4`}>
-                  <program.icon size={20} className="sm:size-6" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-primary transition-colors">{program.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-sm mb-4 grow">
-                  {program.desc}
-                </p>
+                  <h2 className="bn mt-6 text-h3 font-bold text-ink">{program.titleBn}</h2>
+                  <p className="mt-1 text-eyebrow font-semibold uppercase tracking-[0.18em] text-primary">
+                    {program.title}
+                  </p>
 
-                <div className="space-y-2 mb-4 sm:mb-6">
-                  {program.features.map((feature, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 font-medium">
-                      <CheckCircle2 size={14} className="text-primary mt-0.5 shrink-0" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
+                  <p className="bn mt-4 text-small leading-relaxed text-slate-600">
+                    {program.desc}
+                  </p>
 
-                <Link to="/contact" className="inline-flex items-center gap-1 sm:gap-2 text-primary font-bold text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest border-b-2 border-transparent hover:border-primary transition-all w-fit mt-auto">
-                  Get Involved <ArrowRight size={10} className="sm:size-3.5" />
-                </Link>
-              </motion.div>
+                  <ul className="mt-6 space-y-2.5 border-t border-slate-200 pt-6">
+                    {program.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2.5">
+                        <Check size={14} strokeWidth={3} className="mt-1 shrink-0 text-primary" />
+                        <span className="text-small text-slate-600">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-7">
+                    <Button to="/contact" size="sm" variant="outline">
+                      Get involved
+                    </Button>
+                  </div>
+                </Card>
+              </li>
             ))}
-          </div>
-        </div>
-      </section>
+          </ul>
+        </Container>
+      </Section>
 
-      {/* Impact Stats */}
-      <section className="py-24 bg-slate-50 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-            {[
-              { label: 'Students Helped', value: '50+' },
-              { label: 'Medical Camps', value: '2+' },
-              { label: 'Food Packages', value: '1,000+' },
-              { label: 'Villages Covered', value: '5+' },
-            ].map((stat, i) => (
-              <div key={i}>
-                <p className="text-4xl font-bold text-slate-900 mb-2">{stat.value}</p>
-                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section tone="muted" tight>
+        <Container>
+          <StatRow stats={outcomes} />
+        </Container>
+      </Section>
 
-      {/* CTA Section */}
-      <section className="py-32 bg-slate-900 text-white text-center relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <h2 className="text-4xl md:text-6xl font-bold mb-10 leading-tight">আমাদের কার্যক্রমে <br /> অংশ নিন</h2>
-          <p className="text-2xl text-slate-400 mb-14 leading-relaxed font-medium">
-            আপনার একটি ছোট অবদান আমাদের কার্যক্রমকে আরও গতিশীল করতে পারে। আজই আমাদের সাথে যুক্ত হোন।
-          </p>
-          <div className="flex flex-wrap justify-center gap-8">
-            <Link to="/donate" className="bg-primary hover:bg-primary-dark text-white px-12 py-5 rounded-md font-bold text-xl shadow-2xl shadow-primary/40 transition-all">
-              Donate Now
-            </Link>
-            <Link to="/contact" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-5 rounded-md font-bold text-xl hover:bg-white/20 transition-all">
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
+      <CtaSection
+        title="আমাদের কার্যক্রমে অংশ নিন"
+        lede="আপনার একটি ছোট অবদান আমাদের কার্যক্রমকে আরও গতিশীল করতে পারে। আজই আমাদের সাথে যুক্ত হোন।"
+      />
+    </>
   );
 }

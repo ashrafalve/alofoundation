@@ -1,115 +1,175 @@
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'motion/react';
-import { Menu, X, Sun } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { Menu, X } from 'lucide-react';
+import { Button, Container } from '@/src/components/ui';
+import { navLinks, site } from '@/src/lib/site';
 import { cn } from '@/src/lib/utils';
-
-const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'About Us', path: '/about' },
-  { name: 'Programs', path: '/programs' },
-  { name: 'Gallery', path: '/gallery' },
-  { name: 'Contact', path: '/contact' },
-];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 8);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const isActive = (path: string) =>
+    path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
+
   return (
-    <nav
+    <header
       className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-300 border-b bg-white border-slate-200 py-3 shadow-sm'
+        'fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300',
+        isScrolled || isOpen
+          ? 'border-slate-200 bg-white/95 backdrop-blur-md'
+          : 'border-transparent bg-white',
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-3 group">
+      <Container>
+        <div className="flex h-20 items-center justify-between gap-8">
+          <Link to="/" className="flex shrink-0 items-center gap-3" aria-label={site.nameEn}>
             <img
-              src="/logo/alofoundationlogo.png"
-              alt="Alo Foundation Logo"
-              className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+              src={site.logo}
+              alt=""
+              aria-hidden="true"
+              className="h-11 w-auto object-contain"
             />
-            <div className="flex flex-col">
-              <span className="text-xl font-bold text-slate-900 leading-none">আলো ফাউণ্ডেশন</span>
-              <span className="text-[10px] uppercase tracking-widest text-primary font-semibold">Alo Foundation</span>
-            </div>
+            <span className="flex flex-col leading-none">
+              <span className="bn text-[15px] font-bold text-ink">{site.nameBn}</span>
+              <span className="mt-1 text-eyebrow font-semibold uppercase tracking-[0.18em] text-primary">
+                {site.nameEn}
+              </span>
+            </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={cn(
-                  'text-sm font-medium transition-colors hover:text-primary',
-                  location.pathname === link.path ? 'text-primary' : 'text-slate-600'
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              to="/donate"
-              className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md text-sm font-semibold transition-all shadow-sm hover:shadow-md active:scale-95"
-            >
+          <nav aria-label="Primary" className="hidden lg:block">
+            <ul className="flex items-center gap-9">
+              {navLinks.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    aria-current={isActive(link.path) ? 'page' : undefined}
+                    className={cn(
+                      'relative py-2 text-small font-medium transition-colors',
+                      isActive(link.path)
+                        ? 'text-primary'
+                        : 'text-slate-600 hover:text-ink',
+                    )}
+                  >
+                    {link.name}
+                    {isActive(link.path) ? (
+                      <span
+                        aria-hidden="true"
+                        className="absolute inset-x-0 -bottom-0.5 h-px bg-primary"
+                      />
+                    ) : null}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="hidden lg:block">
+            <Button to="/donate" size="sm" className="text-white">
               Donate Now
-            </Link>
+            </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 text-slate-600"
-            onClick={() => setIsOpen(!isOpen)}
+            ref={toggleRef}
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-md text-ink transition-colors hover:bg-slate-100 lg:hidden"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
-      </div>
+      </Container>
 
-      {/* Mobile Nav */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-white border-b border-slate-200 absolute w-full left-0 shadow-xl"
-        >
-          <div className="px-4 pt-2 pb-6 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={cn(
-                  'block px-3 py-3 text-base font-medium rounded-md',
-                  location.pathname === link.path
-                    ? 'bg-primary/10 text-primary'
-                    : 'text-slate-600 hover:bg-slate-50'
-                )}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="pt-4">
-              <Link
-                to="/donate"
-                className="block w-full text-center bg-primary text-white px-6 py-3 rounded-md font-semibold"
-                onClick={() => setIsOpen(false)}
-              >
-                Donate Now
-              </Link>
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </nav>
+      <AnimatePresence>
+        {isOpen ? (
+          <motion.div
+            id="mobile-menu"
+            initial={reduceMotion ? false : { opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-x-0 top-20 border-b border-slate-200 bg-white lg:hidden"
+          >
+            <Container>
+              <nav aria-label="Mobile" className="py-6">
+                <ul className="flex flex-col">
+                  {navLinks.map((link) => (
+                    <li key={link.path} className="border-b border-slate-100 last:border-0">
+                      <Link
+                        to={link.path}
+                        aria-current={isActive(link.path) ? 'page' : undefined}
+                        className={cn(
+                          'block py-4 text-body font-medium transition-colors',
+                          isActive(link.path) ? 'text-primary' : 'text-ink hover:text-primary',
+                        )}
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex flex-col gap-3">
+                  <Button
+                    to="/donate"
+                    size="lg"
+                    className="text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Donate Now
+                  </Button>
+                  <Button
+                    to="/contact"
+                    size="lg"
+                    variant="outline"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Become a Volunteer
+                  </Button>
+                </div>
+              </nav>
+            </Container>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </header>
   );
 }

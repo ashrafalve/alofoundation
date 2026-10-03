@@ -3,48 +3,151 @@
 
 @theme {
   --font-sans: "Inter", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
-  --font-bengali: "Hind Siliguri", sans-serif;
-  
-  --color-primary: #047857; /* Emerald 700 */
-  --color-primary-dark: #065f46; /* Emerald 800 */
-  --color-secondary: #0f172a; /* Slate 900 */
-  --color-accent: #f59e0b; /* Amber 500 */
+  --font-bengali: "Hind Siliguri", "Inter", sans-serif;
+
+  /* Brand palette — unchanged from the original theme.
+     primary      → accent text/icons on light backgrounds (5.48:1)
+     primary-dark → fill behind white text (7.68:1, clears AAA)
+     primary-deep → hover fill (9.72:1) */
+  --color-primary: #047857;
+  --color-primary-dark: #065f46;
+  --color-primary-deep: #064e3b;
+  --color-primary-light: #34d399;
+  --color-primary-tint: #ecfdf5;
+  --color-accent: #f59e0b;
+  --color-accent-tint: #fffbeb;
+
+  /* Ink neutrals for dark sections */
+  --color-ink: #0b1220;
+  --color-ink-soft: #1e293b;
+
+  /* Secondary text on light backgrounds (4.76:1 on white).
+     On dark backgrounds use text-white — never a gray. */
+  --color-subtle: #64748b;
+
+  /* Type scale */
+  --text-display: clamp(2.5rem, 6vw, 4.25rem);
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.03em;
+
+  --text-h1: clamp(2.125rem, 4.4vw, 3.25rem);
+  --text-h1--line-height: 1.12;
+  --text-h1--letter-spacing: -0.025em;
+
+  --text-h2: clamp(1.75rem, 3vw, 2.375rem);
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.02em;
+
+  --text-h3: clamp(1.25rem, 1.8vw, 1.5rem);
+  --text-h3--line-height: 1.3;
+  --text-h3--letter-spacing: -0.015em;
+
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.75;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.75;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.6;
+
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.18em;
+
+  /* Radius */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+
+  /* Restrained elevation — structure comes from hairlines, not shadows */
+  --shadow-card: 0 1px 2px 0 rgb(15 23 42 / 0.05);
+  --shadow-lift: 0 16px 32px -20px rgb(15 23 42 / 0.3);
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
-    @apply bg-white text-slate-900 antialiased;
+    @apply bg-white text-slate-600 antialiased;
     font-family: var(--font-sans);
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight text-slate-900;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-ink;
+    text-wrap: balance;
   }
-  
+
   p {
-    @apply leading-relaxed;
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-primary/15 text-ink;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-/* Professional Card Style */
-.pro-card {
-  @apply bg-white border border-slate-100 rounded-md shadow-sm hover:shadow-xl transition-all duration-500;
-}
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
 
-.section-padding {
-  @apply py-24 md:py-32;
+  .eyebrow {
+    @apply text-eyebrow font-semibold uppercase tracking-[0.18em];
+  }
+
+  .rule {
+    @apply h-px w-10 bg-primary;
+  }
+
+  .surface-card {
+    @apply rounded-lg border border-slate-200 bg-white shadow-card;
+  }
+
+  .bn {
+    font-family: var(--font-bengali);
+  }
 }
 
 @layer utilities {
-  @keyframes slow-zoom {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
+  .tnum {
+    font-variant-numeric: tabular-nums;
   }
-  .animate-slow-zoom {
-    animation: slow-zoom 20s infinite alternate ease-in-out;
+
+  .animate-drift {
+    animation: drift 24s infinite alternate var(--ease-out-expo);
   }
-  
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-400;
+
+  @keyframes drift {
+    from {
+      transform: scale(1.04);
+    }
+    to {
+      transform: scale(1.14);
+    }
   }
 }
